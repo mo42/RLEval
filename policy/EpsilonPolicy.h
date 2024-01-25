@@ -45,8 +45,8 @@ TGridAction epsilonPolicy(const IGridWorld<TGridState, TGridAction>& world,
  */
 template <typename TGridState, typename TGridAction>
 TGridAction epsilonPolicy(const IGridWorld<TGridState, TGridAction>& world,
-                          const Value& value,
-                          const TGridState& state, double epsilon) {
+                          const Value& value, const TGridState& state,
+                          double epsilon) {
   if (uniformRandom() > epsilon) {
     return greedyPolicy<TGridState, TGridAction>(world, value, state);
   } else {

@@ -45,14 +45,13 @@ TGridAction greedyPolicy(const IGridWorld<TGridState, TGridAction>& world,
  */
 template <typename TGridState, typename TGridAction>
 TGridAction greedyPolicy(const IGridWorld<TGridState, TGridAction>& world,
-                         const Value& value,
-                         const TGridState& state) {
+                         const Value& value, const TGridState& state) {
   double max = std::numeric_limits<double>::lowest();
   TGridAction maxAction = 0;
   for (std::size_t i = 0; i < world.getNumberActions(); ++i) {
     TGridState nextState;
     world.act(state, i, nextState);
-    if(max < value[nextState.id]) {
+    if (max < value[nextState.id]) {
       max = value[nextState.id];
       maxAction = i;
     }

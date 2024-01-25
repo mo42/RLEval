@@ -41,7 +41,7 @@ void policyGradientUpdate(const IWorld<TParameter, TAction>& world,
   Eigen::MatrixXd dtheta(p.updatesEpisode, theta.rows());
   Eigen::MatrixXd dj(p.updatesEpisode, 1);
   TParameter noise;
-  if(noise.rows() == 0)
+  if (noise.rows() == 0)
     noise.resize(theta.rows());
   double j = episode(world, theta, p);
   for (size_t i = 0; i < p.updatesEpisode; ++i) {
@@ -73,10 +73,10 @@ void resilientBackPropagation(TParameter& theta, TParameter& alpha,
                               TParameter& gradient,
                               TParameter& previousGradient) {
   for (std::size_t i = 0; i < theta.rows(); ++i) {
-    if(gradient(i) * previousGradient(i) > 0.0) {
+    if (gradient(i) * previousGradient(i) > 0.0) {
       alpha(i) *= 1.2;
       theta(i) -= alpha(i) * sign(gradient(i));
-    } else if(gradient(i) * previousGradient(i) < 0.0) {
+    } else if (gradient(i) * previousGradient(i) < 0.0) {
       alpha(i) *= 0.5;
       theta(i) += alpha(i) * sign(gradient(i));
     } else {

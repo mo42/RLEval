@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include <MazeWorld.h>
 #include <CliffWorld.h>
+#include <MazeWorld.h>
 #include <Parameter.h>
 #include <Sarsa.h>
 

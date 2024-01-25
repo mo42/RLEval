@@ -1,8 +1,8 @@
 #include <AdapterWorld.h>
-#include <MazeWorld.h>
 #include <CliffWorld.h>
-#include <Power.h>
+#include <MazeWorld.h>
 #include <PolicyGradient.h>
+#include <Power.h>
 #include <iostream>
 
 using namespace RL;
@@ -36,7 +36,7 @@ void testCliffWorld() {
 }
 
 int main(int argc, char* argv[]) {
-  //testCliffWorld();
+  // testCliffWorld();
   testMazeWorld();
   return 0;
 }

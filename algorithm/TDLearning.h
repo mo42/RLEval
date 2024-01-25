@@ -20,15 +20,17 @@ void tdlearning(const IGridWorld<TGridState, TGridAction>& world, Value& value,
     TGridState state;
     world.initialState(state);
     for (std::size_t i = 0; i < parameter.episodeLength; ++i) {
-      TGridAction action = epsilonPolicy<TGridState, TGridAction>(world, value,
-        state, parameter.epsilon);
+      TGridAction action = epsilonPolicy<TGridState, TGridAction>(
+          world, value, state, parameter.epsilon);
       TGridState nextState;
       TRLValue reward = world.act(state, action, nextState);
       rewards += reward;
-      value[state.id] = valueOld[state.id] + parameter.alpha
-        * (reward + parameter.gamma * valueOld[nextState.id] - valueOld[state.id]);
+      value[state.id] =
+          valueOld[state.id] +
+          parameter.alpha * (reward + parameter.gamma * valueOld[nextState.id] -
+                             valueOld[state.id]);
       state = nextState;
-      if(world.isTerminal(state)) {
+      if (world.isTerminal(state)) {
         value[state.id] = reward;
         break;
       }
