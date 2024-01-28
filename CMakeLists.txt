@@ -1,8 +1,31 @@
 cmake_minimum_required (VERSION 3.6)
 project ("RLTest")
 
-set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -Wall")
-set(CMAKE_CXX_FLAGS "-O0")
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_COMPILER "clang++")
+
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang" OR CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+  add_compile_options(
+    -Wall
+    -Wextra
+    -pedantic
+    # -Werror until all errors are fixed
+    -Wconversion
+    -Wsign-conversion
+    -Wshadow
+    -Wfloat-equal
+    -Wmissing-include-dirs
+    -Wmissing-declarations
+    -Wpointer-arith
+    -Wredundant-decls
+    -Wuninitialized
+    -Wunused
+    -Wold-style-cast
+    -Woverloaded-virtual
+    -Wctor-dtor-privacy
+    -Wformat=2
+  )
+endif()
 
 include_directories(algorithm)
 include_directories(SYSTEM eigen)

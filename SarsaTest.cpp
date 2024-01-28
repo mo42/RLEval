@@ -33,7 +33,7 @@ void testCliffWorld() {
   sarsa(world, stateAction, parameter);
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   testMazeWorld();
   testCliffWorld();
   return 0;

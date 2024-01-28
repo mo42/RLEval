@@ -15,7 +15,7 @@ namespace RL {
 template <typename TGridState, typename TGridAction>
 TGridAction randomPolicy(const IGridWorld<TGridState, TGridAction>& world) {
   return static_cast<TGridAction>(
-      uniformRandomInteger(0, world.getNumberActions()));
+      uniformRandomInteger(0u, world.getNumberActions()));
 }
 
 } /* namespace RL */

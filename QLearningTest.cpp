@@ -19,7 +19,7 @@ void testCliffWorld() {
   qlearning(world, stateAction, parameter);
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   testCliffWorld();
   return 0;
 }

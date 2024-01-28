@@ -17,6 +17,7 @@ double uniformRandom(void);
  * Return a pseudo-random integer in the interval [min, max]
  */
 int uniformRandomInteger(int min, int max);
+size_t uniformRandomInteger(size_t min, size_t max);
 
 /**
  * Fill epsilon with independent normal distributed random numbers

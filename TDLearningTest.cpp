@@ -31,7 +31,7 @@ void testCliffWorld() {
   tdlearning(world, value, parameter);
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   testMazeWorld();
   testCliffWorld();
   return 0;

@@ -17,4 +17,8 @@ int uniformRandomInteger(int min, int max) {
   return std::uniform_int_distribution<int>(min, max)(engine);
 }
 
+size_t uniformRandomInteger(size_t min, size_t max) {
+  return std::uniform_int_distribution<size_t>(min, max)(engine);
+}
+
 } /* namespace RL */
